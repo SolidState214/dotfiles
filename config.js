@@ -50,7 +50,7 @@ module.exports = {
     // 'box-sync',
     //'comicbooklover',
     //'diffmerge',
-    'docker', // docker for mac
+    // 'docker', // docker for mac
     //'dropbox',
     //'evernote',
     'flux',
@@ -65,9 +65,12 @@ module.exports = {
     'sizeup',
     //'sketchup',
     'slack',
+    'spotify',
+    'sublime-text',
     'the-unarchiver',
     //'torbrowser',
     //'transmission',
+    'vagrant',
     'visual-studio-code',
     //'vlc',
     'xquartz'
