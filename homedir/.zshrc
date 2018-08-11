@@ -54,3 +54,12 @@ unsetopt correct
 
 # run fortune on new terminal :)
 # fortune
+
+# other preferred settings
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.ansible_vault
+export EDITOR="subl -w"
+export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+
+# add profile bin directory to PATH
+export PATH="$PATH:~/.bin"
+

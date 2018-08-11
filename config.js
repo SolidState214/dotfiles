@@ -3,6 +3,7 @@ module.exports = {
     // http://conqueringthecommandline.com/book/ack_ag
     'ack',
     'ag',
+    'ansible'
     // Install GNU core utilities (those that come with macOS are outdated)
     // Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
     'coreutils',
@@ -13,7 +14,7 @@ module.exports = {
     'readline', // ensure gawk gets good readline
     'gawk',
     // http://www.lcdf.org/gifsicle/ (because I'm a gif junky)
-    'gifsicle',
+    // 'gifsicle',
     'gnupg',
     // Install GNU `sed`, overwriting the built-in `sed`
     // so we can do "sed -i 's/foo/bar/' file" instead of "sed -i '' 's/foo/bar/' file"
@@ -29,7 +30,7 @@ module.exports = {
     // Install some other useful utilities like `sponge`
     'moreutils',
     'nmap',
-    'openconnect',
+    // 'openconnect',
     'reattach-to-user-namespace',
     // better/more recent version of screen
     'homebrew/dupes/screen',
@@ -47,10 +48,11 @@ module.exports = {
     //'adium',
     //'amazon-cloud-drive',
     //'atom',
-    // 'box-sync',
+    //'box-sync',
     //'comicbooklover',
     //'diffmerge',
-    // 'docker', // docker for mac
+    'discord',
+    //'docker', // docker for mac
     //'dropbox',
     //'evernote',
     'flux',
@@ -60,9 +62,10 @@ module.exports = {
     'little-snitch',
     'macbreakz',
     'micro-snitch',
-    'signal',
+    'postman',
+    //'signal',
     //'macvim',
-    'sizeup',
+    //'sizeup',
     //'sketchup',
     'slack',
     'spotify',
@@ -72,8 +75,9 @@ module.exports = {
     //'transmission',
     'vagrant',
     'visual-studio-code',
+    'vmware-fusion'
     //'vlc',
-    'xquartz'
+    //'xquartz'
   ],
   gem: [
   ],
