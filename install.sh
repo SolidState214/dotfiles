@@ -273,6 +273,7 @@ node index.js
 ok
 
 running "cleanup homebrew"
+brew analytics off
 brew cleanup > /dev/null 2>&1
 ok
 
@@ -789,8 +790,8 @@ defaults write com.apple.dock showhidden -bool true;ok
 running "Make Dock more transparent"
 defaults write com.apple.dock hide-mirror -bool true;ok
 
-running "Reset Launchpad, but keep the desktop wallpaper intact"
-find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete;ok
+# running "Reset Launchpad, but keep the desktop wallpaper intact"
+# find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete;ok
 
 bot "Configuring Hot Corners"
 # Possible values:
