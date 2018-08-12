@@ -124,11 +124,8 @@ if [[ "$MD5_NEWWP" != "$MD5_OLDWP" ]]; then
     ok
   else
     running "Set a custom wallpaper image"
-    # `DefaultDesktop.jpg` is already a symlink, and
-    # all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
-    currentuser=$( ls -l /dev/console | awk '{print $3}' )
     workingdir=`pwd`
-    sqlite3 /Users/$currentuser/Library/Application\ Support/Dock/desktoppicture.db \
+    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db \
       'UPDATE data SET value = "$workingdir/img/wallpaper.jpg";';ok
   fi
 fi
