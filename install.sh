@@ -283,6 +283,9 @@ running "cleanup homebrew"
 brew cleanup > /dev/null 2>&1
 ok
 
+running "Configure Sublime Text"
+python sublime-text/setup.py
+
 ###############################################################################
 bot "Configuring General System UI/UX..."
 ###############################################################################
@@ -461,8 +464,8 @@ sudo chflags uchg /Private/var/vm/sleepimage;ok
 # # the Dock to launch apps.
 # defaults write com.apple.dock persistent-apps -array "";ok
 
-#running "Enable the 2D Dock"
-#defaults write com.apple.dock no-glass -bool true;ok
+running "Enable the 2D Dock"
+defaults write com.apple.dock no-glass -bool true;ok
 
 #running "Disable the Launchpad gesture (pinch with thumb and three fingers)"
 #defaults write com.apple.dock showLaunchpadGestureEnabled -int 0;ok
