@@ -276,7 +276,8 @@ brew cleanup > /dev/null 2>&1
 ok
 
 running "Configuring Sublime Text"
-$(cd sublime-text && python setup.py)
+cd sublime-text; python setup.py; cd ..
+ok
 
 bot "Installing Vagrant plugins"
 vagrant plugin install vagrant-disksize
