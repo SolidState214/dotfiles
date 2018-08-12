@@ -126,15 +126,10 @@ if [[ "$MD5_NEWWP" != "$MD5_OLDWP" ]]; then
     running "Set a custom wallpaper image"
     # `DefaultDesktop.jpg` is already a symlink, and
     # all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
-    rm -rf ~/Library/Application Support/Dock/desktoppicture.db
-    sudo rm -f /System/Library/CoreServices/DefaultDesktop.jpg > /dev/null 2>&1
-    sudo rm -f /Library/Desktop\ Pictures/El\ Capitan.jpg > /dev/null 2>&1
-    sudo rm -f /Library/Desktop\ Pictures/Sierra.jpg > /dev/null 2>&1
-    sudo rm -f /Library/Desktop\ Pictures/Sierra\ 2.jpg > /dev/null 2>&1
-    sudo cp ./img/wallpaper.jpg /System/Library/CoreServices/DefaultDesktop.jpg;
-    sudo cp ./img/wallpaper.jpg /Library/Desktop\ Pictures/Sierra.jpg;
-    sudo cp ./img/wallpaper.jpg /Library/Desktop\ Pictures/Sierra\ 2.jpg;
-    sudo cp ./img/wallpaper.jpg /Library/Desktop\ Pictures/El\ Capitan.jpg;ok
+    currentuser=$( ls -l /dev/console | awk '{print $3}' )
+    workingdir=`pwd`
+    sqlite3 /Users/$currentuser/Library/Application\ Support/Dock/desktoppicture.db \
+      'UPDATE data SET value = "$workingdir/img/wallpaper.jpg";';ok
   fi
 fi
 
@@ -283,8 +278,15 @@ running "cleanup homebrew"
 brew cleanup > /dev/null 2>&1
 ok
 
-running "Configure Sublime Text"
+running "Configuring Sublime Text"
 $(cd sublime-text && python setup.py)
+
+bot "Installing Vagrant plugins"
+vagrant plugin install vagrant-disksize
+vagrant plugin install vagrant-host-shell
+vagrant plugin install vagrant-junos
+vagrant plugin install vagrant-share
+vagrant plugin install vagrant-vmware-fusion
 
 ###############################################################################
 bot "Configuring General System UI/UX..."
@@ -668,8 +670,8 @@ running "Set Desktop as the default location for new Finder windows"
 defaults write com.apple.finder NewWindowTarget -string "PfDe"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/";ok
 
-running "Show hidden files by default"
-defaults write com.apple.finder AppleShowAllFiles -bool true;ok
+# running "Show hidden files by default"
+# defaults write com.apple.finder AppleShowAllFiles -bool true;ok
 
 running "Show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true;ok
