@@ -122,8 +122,9 @@ if [[ $response =~ ^(no|n|N) ]];then
 else
   running "Set a custom wallpaper image"
   workingdir=`pwd`
-  sqlite3 -batch ~/Library/Application\ Support/Dock/desktoppicture.db \
-    "UPDATE data SET value = \"$workingdir/img/wallpaper.jpg\";"
+  osascript -e "tell application \"System Events\" to set picture of every desktop to (\"$workingdir/img/wallpaper.jpg\" as POSIX file as alias)"
+#  sqlite3 -batch ~/Library/Application\ Support/Dock/desktoppicture.db \
+#    "UPDATE data SET value = \"$workingdir/img/wallpaper.jpg\";"
   sleep 3
   killall Dock;ok
 fi
