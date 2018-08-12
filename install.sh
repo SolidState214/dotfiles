@@ -125,8 +125,9 @@ if [[ "$MD5_NEWWP" != "$MD5_OLDWP" ]]; then
   else
     running "Set a custom wallpaper image"
     workingdir=`pwd`
-    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db \
-      'UPDATE data SET value = "$workingdir/img/wallpaper.jpg";';ok
+    sqlite3 -batch ~/Library/Application\ Support/Dock/desktoppicture.db \
+      "UPDATE data SET value = \"$workingdir/img/wallpaper.jpg\";"
+    killal Dock;ok
   fi
 fi
 
