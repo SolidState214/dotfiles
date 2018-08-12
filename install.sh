@@ -631,8 +631,8 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false;o
 bot "Configuring the Screen"
 ###############################################################################
 
-running "Require password immediately after sleep or screen saver begins"
-defaults write com.apple.screensaver askForPassword -int 1
+running "Require password 15 seconds after sleep or screen saver begins"
+defaults write com.apple.screensaver askForPassword -int 15
 defaults write com.apple.screensaver askForPasswordDelay -int 0;ok
 
 running "Save screenshots to the desktop"
