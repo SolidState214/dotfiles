@@ -115,20 +115,17 @@ if [[ $? = 0 ]]; then
   fi
 fi
 
-MD5_NEWWP=$(md5 img/wallpaper.jpg | awk '{print $4}')
-MD5_OLDWP=$(md5 /System/Library/CoreServices/DefaultDesktop.jpg | awk '{print $4}')
-if [[ "$MD5_NEWWP" != "$MD5_OLDWP" ]]; then
-  read -r -p "Do you want to use the project's custom desktop wallpaper? [Y|n] " response
-  if [[ $response =~ ^(no|n|N) ]];then
-    echo "skipping...";
-    ok
-  else
-    running "Set a custom wallpaper image"
-    workingdir=`pwd`
-    sqlite3 -batch ~/Library/Application\ Support/Dock/desktoppicture.db \
-      "UPDATE data SET value = \"$workingdir/img/wallpaper.jpg\";"
-    killall Dock;ok
-  fi
+read -r -p "Do you want to use the project's custom desktop wallpaper? [Y|n] " response
+if [[ $response =~ ^(no|n|N) ]];then
+  echo "skipping...";
+  ok
+else
+  running "Set a custom wallpaper image"
+  workingdir=`pwd`
+  sqlite3 -batch ~/Library/Application\ Support/Dock/desktoppicture.db \
+    "UPDATE data SET value = \"$workingdir/img/wallpaper.jpg\";"
+  sleep 3
+  killall Dock;ok
 fi
 
 #####
