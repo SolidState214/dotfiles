@@ -127,7 +127,7 @@ if [[ "$MD5_NEWWP" != "$MD5_OLDWP" ]]; then
     workingdir=`pwd`
     sqlite3 -batch ~/Library/Application\ Support/Dock/desktoppicture.db \
       "UPDATE data SET value = \"$workingdir/img/wallpaper.jpg\";"
-    killal Dock;ok
+    killall Dock;ok
   fi
 fi
 
