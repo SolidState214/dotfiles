@@ -284,7 +284,7 @@ brew cleanup > /dev/null 2>&1
 ok
 
 running "Configure Sublime Text"
-python sublime-text/setup.py
+$(cd sublime-text && python sublime-text/setup.py)
 
 ###############################################################################
 bot "Configuring General System UI/UX..."
