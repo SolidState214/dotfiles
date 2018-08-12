@@ -2,6 +2,7 @@
 	"installed_packages":
 	[
 		"Package Control",
+		"Anaconda",
 		"Predawn",
 		"Emmet",
 		"EditorConfig",
@@ -9,11 +10,13 @@
 		"AutoFileName",
 		"Autoprefixer",
 		"Can I Use",
+		"Jinja2",
+		"Junos",
 		"GhostText",
 		"Markdown Preview",
 		"SideBarEnhancements",
-		"SideBarGit",
     	"Theme - Soda",
+    	"Origami",
 		"Terminal",
 		"BracketHighlighter",
     	"Sublimerge",

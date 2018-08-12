@@ -6,7 +6,7 @@
     "mdown",
   ],
   // use the predawn theme for markdown
-  "color_scheme": "Packages/Predawn/predawn-markdown.tmTheme",
+  "color_scheme": "Packages/Predawn/predawn.tmTheme",
   // Centers the column in the window
   "draw_centered": true,
   "draw_indent_guides": false,

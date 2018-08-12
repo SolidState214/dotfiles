@@ -284,7 +284,7 @@ brew cleanup > /dev/null 2>&1
 ok
 
 running "Configure Sublime Text"
-$(cd sublime-text && python sublime-text/setup.py)
+$(cd sublime-text && python setup.py)
 
 ###############################################################################
 bot "Configuring General System UI/UX..."
@@ -513,6 +513,9 @@ ok
 
 # running "Set sidebar icon size to medium"
 # defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2;ok
+
+running "Set menu bar and dock to dark mode"
+osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
 
 running "Always show scrollbars"
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always";ok
