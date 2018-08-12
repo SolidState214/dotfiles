@@ -1,22 +1,19 @@
 {
-	// set Predawn as the theme
-	"theme": "predawn.sublime-theme",
-	"color_scheme": "Soda Dark 3.sublime-theme",
-	// indicatior when a file has been modified but not saved
-	"highlight_modified_tabs": true,
-	"tab_size": 2,
-	// off by default to avoid polluting history during committs
-	"translate_tabs_to_spaces": true,
-	// "draw_white_space": "all",
-	"indent_guide_options":
-	[
-		"draw_normal",
-		"draw_active"
-	],
-	"sidebar_medium": true,
-	"tabs_small": true,
-	"ignored_packages": [
-		// ignore vim-style commands
-		"Vintage"
-	]
+  "color_scheme": "Packages/Predawn/predawn.tmTheme",
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "SideBarGit",
+    "Vintage"
+  ],
+  "indent_guide_options":
+  [
+    "draw_normal",
+    "draw_active"
+  ],
+  "sidebar_medium": true,
+  "tab_size": 2,
+  "tabs_small": true,
+  "theme": "Soda Dark 3.sublime-theme",
+  "translate_tabs_to_spaces": true
 }
