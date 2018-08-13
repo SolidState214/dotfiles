@@ -57,6 +57,7 @@ module.exports = {
     //'dropbox',
     //'evernote',
     'flux',
+    'google-chrome',
     'gpg-suite',
     //'ireadfast',
     'iterm2',
