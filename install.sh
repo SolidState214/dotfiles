@@ -959,6 +959,10 @@ running "setting fonts"
 # defaults write com.googlecode.iterm2 "Non Ascii Font" -string "RobotoMonoForPowerline-Regular 12";
 /usr/libexec/PlistBuddy -c "Set :\"New Bookmarks\":0:\"Normal Font\" \"Hack-Regular 12\""  ~/Library/Preferences/com.googlecode.iterm2.plist
 /usr/libexec/PlistBuddy -c "Set :\"New Bookmarks\":0:\"Non Ascii Font\" \"RobotoMonoForPowerline-Regular 12\""  ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :\"New Bookmarks\":0:\"Thin Strokes\" \"3\""  ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :\"New Bookmarks\":0:\"Mouse Reporting\" \"0\"" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "delete :\"New Bookmarks\":0:\"Transparency\" \"35\"" ~/Library/Preferences/com.googlecode.iterm2.plist
+/usr/libexec/PlistBuddy -c "Set :\"New Bookmarks\":0:\"Scrollback Lines\" \"100000\"" ~/Library/Preferences/com.googlecode.iterm2.plist
 ok
 running "reading iterm settings"
 defaults read -app iTerm > /dev/null 2>&1;
